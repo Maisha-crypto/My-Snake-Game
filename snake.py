@@ -50,3 +50,7 @@ class Snake:
         '''This method turns the first segment right, if the snake is not already going left.'''
         if self.HEAD_OF_SNAKE.heading() != LEFT:
             self.HEAD_OF_SNAKE.setheading(RIGHT)
+
+    def grow(self):
+        '''This function extends the snake when it collides with food'''
+        pass
