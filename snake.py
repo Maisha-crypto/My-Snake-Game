@@ -17,11 +17,18 @@ class Snake:
     def create_snake(self):
         '''This method creates the initial snake, using 3 square segments.'''
         for position in STARTING_POSITION:
+            self.add_segment(position)
+
+    def add_segment(self, position):
+            '''This function extends the snake when it collides with food'''
             segment = Turtle(shape='square')
             segment.color('white')
             segment.penup()
             segment.goto(position)
             self.segments.append(segment)
+
+    def grow_snake(self):
+        self.add_segment(self.segments[-1].position())
 
     def move(self):
         '''This method moves the created segments one at a time '''
@@ -51,6 +58,4 @@ class Snake:
         if self.HEAD_OF_SNAKE.heading() != LEFT:
             self.HEAD_OF_SNAKE.setheading(RIGHT)
 
-    def grow(self):
-        '''This function extends the snake when it collides with food'''
-        pass
+    
