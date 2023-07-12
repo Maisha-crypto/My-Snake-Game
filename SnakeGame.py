@@ -20,7 +20,6 @@ food = Food()
 
 # Creating an instance of the Food class
 score = Scoreboard()
-
 isGameOn = True
 
 # initialisation of the screen listen functionality, and setup of the control functions
@@ -35,7 +34,6 @@ while isGameOn:
     time.sleep(0.1) # The delay between updates
     snake.move()    # Moving the snake
     
-
     # detecting snake collision with food
     if snake.HEAD_OF_SNAKE.distance(food) <= 15:
         food.refresh_food()
@@ -54,7 +52,5 @@ while isGameOn:
         if snake.HEAD_OF_SNAKE.distance(seg) < 10:
             isGameOn=False
             score.game_over()
-        
-        
-              
+             
 screen.exitonclick()
